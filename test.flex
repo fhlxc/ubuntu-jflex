@@ -1,22 +1,13 @@
-import java_cup.runtime.*;
+//import java_cup.runtime.*;
 
 %%
-//参数设置和声明段 
+
 %class Lexer
 %line 
 %column 
 %standalone
 %unicode
 
-%{
-    public static void init(){}/**//* Just为了兼容手写版*/
-    private Symbol symbol(int type){
-        return new Symbol(type,yyline,yycolumn); 
-    }
-    private Symbol symbol(int type,Object value){
-        return new Symbol(type,yyline,yycolumn,value);
-    }
-%}
 digit=[0-9]
 number={digit}+
 LineTerminator=\r|\n|\r\n
